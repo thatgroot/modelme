@@ -4,6 +4,8 @@
   import tag from "../../../assets/icons/history/tag.svg";
   import archive from "../../../assets/icons/history/archive.svg";
   import share from "../../../assets/icons/history/share.svg";
+  import divider_svg from "../../../assets/icons/divider.svg";
+
   import delete_icon from "../../../assets/icons/history/delete.svg";
   // restore
   import restore from "../../../assets/icons/history/restore.svg";
@@ -121,12 +123,11 @@
   });
 </script>
 
-<div class="flex flex-col items-end  gap-8">
-  <div class="flex justify-start items-end">
-    <div class="flex justify-start items-center gap-4" />
+<div class="flex flex-col items-end gap-8">
+  <div class="flex justify-start items-end gap-[9.67px]">
     {#each actions as action}
       <div
-        class="flex justify-center items-center w-20 relative gap-2 p-3 bg-white border-t-0 border-r-0   {action.active
+        class="flex justify-center items-center w-20 relative p-3 bg-white border-t-0 border-r-0 {action.active
           ? 'border-b-[3px]'
           : 'border-b'} border-l-0 border-[#1f206c]"
       >
@@ -148,14 +149,14 @@
     {/each}
   </div>
 
-  <div class="gap-4 flex">
+  <div class="gap-x-[5px] flex">
     {#if active_action}
-      {#each active_action.actions as { name, icon, id, text }}
+      {#each active_action.actions as { name, icon, id, text }, i}
         <button
           on:click={() => {
             dispatch("sub_action", id);
           }}
-          class="flex justify-start w-max items-center relative gap-2"
+          class="flex justify-start py-2 px-3 w-max items-center relative gap-2"
         >
           <img src={icon} alt={name} />
           <span
@@ -166,6 +167,9 @@
             {name}
           </span>
         </button>
+        {#if i < active_action.actions.length-1}
+          <img src={divider_svg} alt="..." />
+        {/if}
       {/each}
     {/if}
   </div>

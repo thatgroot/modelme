@@ -1,5 +1,11 @@
 <script lang="ts">
   import image_19 from "../../../../assets/19.png";
+  import image_37 from "../../../../assets/37.png";
+  import image_38 from "../../../../assets/38.png";
+  import image_39 from "../../../../assets/39.png";
+  import Badge from "../../badge.svelte";
+  import Input from "../../input.svelte";
+  import SubscriptionOverlay from "../../subscription-overlay.svelte";
 
   export let subscriptions: Array<{
     title: string;
@@ -32,15 +38,13 @@
       >
         Email
       </p>
-      <div
-        class="flex flex-col justify-center items-center self-stretch flex-grow-0 flex-shrink-0 relative p-4 bg-white border border-[#1f206c]"
-      >
-        <p
-          class="self-stretch flex-grow-0 flex-shrink-0 w-[568px] text-lg font-medium text-left text-[#1f206c]"
-        >
-          ganteng@mail.com
-        </p>
-      </div>
+      <Input
+        placeholder="ganteng@mail.com"
+        type="email"
+        name="email"
+        id="email"
+        width="w-full"
+      />
     </div>
     <div
       class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2"
@@ -50,95 +54,13 @@
       >
         Password
       </p>
-      <div
-        class="flex flex-col justify-center items-center self-stretch flex-grow-0 flex-shrink-0 p-4 bg-white border border-[#1f206c]"
-      >
-        <div
-          class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[27px] relative gap-2"
-        >
-          <svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-          ><svg
-            width="8"
-            height="9"
-            viewBox="0 0 8 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="4" cy="4.5" r="4" fill="#232323" />
-          </svg>
-        </div>
-      </div>
+      <Input
+        type="password"
+        placeholder="********"
+        name="password"
+        id="password"
+        width="w-full"
+      />
     </div>
   </div>
   <div
@@ -149,131 +71,84 @@
     >
       Subscriptions
     </p>
-    <div class="flex gap-4 items-start justify-start">
-      {#each subscriptions as { title, subtitle, pricing, perks }}
-        <div class="w-[392px] h-[578px] relative overflow-hidden bg-[#d3d7cc]">
-          <div class="flex flex-col gap-12 py-10 items-center justify-start">
-            <div class="z-[999] w-[330px]  text-left text-white">
-              <span
-                class="w-[330px] text-[32px] font-semibold text-left text-white"
-                >High Grade (HG)</span
-              ><br /><span
-                class="w-[330px] text-[32px] font-semibold text-left text-white"
-                >€30/mo | €288/yr</span
-              ><br /><span class="w-[330px] text-lg text-left text-white"
-                >Save 20% on yearly plans</span
-              >
-            </div>
-            <ul
-              class="w-[312px] list-disc flex flex-col gap-3 text-lg z-[999]  text-left text-white"
-            >
-              {#each perks as perk}
-                <li class="w-[312px] text-lg text-left text-white">
-                  {perk}
-                </li>
-              {/each}
-            </ul>
-          </div>
-          <img
-            alt="..."
-            src={image_19}
-            class="w-[389px] h-[574px] absolute left-0 top-[-1px] object-cover blur-3xl"
-          />
-          <div
-            class="w-[392px] h-[578px] absolute left-px top-0 overflow-hidden"
-            style="background: linear-gradient(134.88deg, #ececec -9.28%, rgba(236,236,236,0) 109.69%);"
+    <!-- {#each subscriptions as { title, subtitle, pricing, perks }} -->
+    <div class="flex justify-center items-center h-[600px] gap-6">
+      <div
+        class="group flex flex-col justify-start items-center self-stretch w-[408px] p-10 relative overflow-hidden gap-[25px] bg-[#e3e4dd]"
+      >
+        <div
+          class="flex flex-col justify-start items-start relative opacity-0"
+        >
+          <span
+            class="text-[32px] font-semibold text-left text-neutral-900 leading-[39px]"
           >
-            <div
-              class="w-[392px] h-[600px] absolute left-[-1px] top-[-1px] bg-gradient-to-b from-[#4434c9]/80 to-[#4434c9]/0"
-            />
-            <div
-              class="flex justify-center items-center w-[312px] absolute left-10 top-[475px] gap-3 px-8 py-4 bg-white"
-            >
-              <p
-                class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-[#1f206c]"
-              >
-                Subscribe
-              </p>
-              <svg
-                width="25"
-                height="25"
-                viewBox="0 0 25 25"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M14.9297 6.43018L20.9997 12.5002L14.9297 18.5702"
-                  stroke="#4434C9"
-                  stroke-width="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M4 12.5H20.83"
-                  stroke="#4434C9"
-                  stroke-width="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-
-            <div class="w-[202px] h-[41px]">
-              <svg
-                width="178"
-                height="41"
-                viewBox="0 0 178 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute left-[179.5px] top-[525.5px]"
-                preserveAspectRatio="none"
-              >
-                <path d="M0 0H178L160 41H0V0Z" fill="#1F206C" /></svg
-              ><svg
-                width="178"
-                height="41"
-                viewBox="0 0 178 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute left-[179.5px] top-[525.5px]"
-                preserveAspectRatio="none"
-              >
-                <path d="M0 0H178L160 41H0V0Z" fill="#1F206C" /></svg
-              ><svg
-                width="24"
-                height="41"
-                viewBox="0 0 24 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute left-[345.5px] top-[525.5px]"
-                preserveAspectRatio="none"
-              >
-                <path d="M18 0H24L6 41H0L18 0Z" fill="#1F206C" /></svg
-              ><svg
-                width="24"
-                height="41"
-                viewBox="0 0 24 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="absolute left-[357.5px] top-[525.5px]"
-                preserveAspectRatio="none"
-              >
-                <path d="M18 0H24L6 41H0L18 0Z" fill="#1F206C" />
-              </svg>
-              <p
-                class="absolute left-[195px] top-[535px] text-lg font-bold text-left text-white"
-              >
-                Most popular
-              </p>
-            </div>
-          </div>
+            High Grade (HG)
+          </span>
+          <span class="text-[32px] font-semibold text-left text-neutral-900">
+            €30/mo | €288/yr
+          </span>
         </div>
-      {/each}
+        <img
+          src={image_38}
+          alt="..."
+          class="absolute -bottom-10 pt-4 z-0 object-cover blur-3xl"
+        />
+        <SubscriptionOverlay active={true}>
+          <div class="absolute -bottom-7 -right-8">
+            <Badge lable="Most popular" />
+          </div>
+        </SubscriptionOverlay>
+      </div>
+      <div
+        class="group flex flex-col justify-start items-center self-stretch w-[408px] p-10 relative overflow-hidden gap-[25px] bg-[#e3e4dd]"
+      >
+        <div
+          class="flex flex-col justify-start items-start relative opacity-0"
+        >
+          <span
+            class="text-[32px] font-semibold text-left text-neutral-900 leading-[39px]"
+          >
+            Real Grade (RG)
+          </span>
+          <span class="text-[32px] font-semibold text-left text-neutral-900">
+            €60/mo | €576/yr
+          </span>
+        </div>
+        <img
+          src={image_39}
+          alt="..."
+          class="absolute -bottom-10 pt-4 z-0 object-cover blur-3xl"
+        />
+        <SubscriptionOverlay active={true}>
+          <div class="absolute -bottom-7 -right-8">
+            <Badge lable="Best value" />
+          </div>
+        </SubscriptionOverlay>
+      </div>
+      <div
+        class="group flex flex-col justify-start items-center self-stretch w-[408px] p-10 relative overflow-hidden gap-[25px] bg-[#e3e4dd]"
+      >
+        <div
+          class="flex flex-col justify-start items-start relative opacity-0"
+        >
+          <span
+            class="text-[32px] font-semibold text-left text-neutral-900 leading-[39px]"
+          >
+            Entry Grade (EG)
+          </span>
+          <span class="text-[32px] font-semibold text-left text-neutral-900">
+            €10/mo | €96/yr
+          </span>
+        </div>
+        <img
+          src={image_37}
+          alt="..."
+          class="absolute -bottom-10 pt-4 z-0 object-cover blur-3xl"
+        />
+        <SubscriptionOverlay active={true} />
+      </div>
     </div>
+    <!-- {/each} -->
   </div>
   <div
     class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[347px] relative gap-4"
@@ -387,3 +262,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  p {
+    font-family: var(--theme-font-family-base);
+  }
+</style>

@@ -2,9 +2,9 @@
   export let title: string;
 </script>
 
-<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-4 py-8 w-full">
   <div class="flex justify-between items-start relative">
-    <p class="text-9xl text-left text-[#232323]">{title}</p>
+    <p class="text-9xl text-left text-[#232323] leading-[0.85] -tracking-[5.1px]">{title}</p>
     <slot />
   </div>
   <svg

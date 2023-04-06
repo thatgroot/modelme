@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="flex justify-between items-center  py-4 border-t-0 border-r-0 border-b border-l-0 border-[#232323]/[0.16]"
+  class="flex justify-between items-center  py-4 border-t-0 border-r-0 border-b border-l-0 border-[#232323]/[0.16] px-12"
 >
   <div
     class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-3"
@@ -26,12 +26,11 @@
         class="w-[97px] h-[65.15px] absolute left-[-0.5px] top-[-0.5px] bg-transparent border border-black"
       />
     </div>
-    <a
-      href="#intro"
-      class="flex-grow-0 flex-shrink-0 text-[50px] text-left text-neutral-900"
+    <p
+      class="text-[50px] text-left text-neutral-900"
     >
       MODELME
-    </a>
+    </p>
   </div>
   <div
     class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-12"

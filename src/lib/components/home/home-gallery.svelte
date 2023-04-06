@@ -22,11 +22,11 @@
       <div
         class="flex justify-center items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-2.5"
       >
-        <p
+        <span
           class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#1f206c]"
         >
           MODELME GALLERY
-        </p>
+        </span>
       </div>
       <div
         class="flex justify-end items-center self-stretch flex-grow-0 flex-shrink-0 relative gap-[18px]"
@@ -63,19 +63,19 @@
               fill="#1F206C"
             />
           </svg>
-          <p
-            class="absolute left-[419px] top-[23.5px] text-lg font-bold text-left text-white"
+          <span
+            class="absolute left-[412px] top-[23px] text-lg font-bold text-left text-white"
           >
             Men coming soon
-          </p>
+          </span>
         </div>
       </div>
-      <p
+      <span
         class="flex-grow-0 flex-shrink-0 w-[606px] text-lg text-center text-[#757575]"
       >
         Content creators generate sustainable and diverse imagery to advertise
         their company and products. Produce on-model fashion imagery and more.
-      </p>
+      </span>
     </div>
     <div
       class="flex justify-start items-start flex-grow-0 flex-shrink-0 w-[1227px] gap-5"
@@ -95,21 +95,21 @@
           <div
             class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 absolute left-10 top-10 gap-3"
           >
-            <p
+            <span
               class="flex-grow-0 flex-shrink-0 text-[22px] font-semibold text-left text-white"
             >
               Diversity in seconds
-            </p>
-            <p
+            </span>
+            <span
               class="flex-grow-0 flex-shrink-0 text-lg text-left text-[#fffefe]"
             >
               Home Decor - eComm
-            </p>
-            <p
+            </span>
+            <span
               class="flex-grow-0 flex-shrink-0 opacity-50 text-sm text-left text-[#fffbfb]"
             >
               by Stomata
-            </p>
+            </span>
           </div>
           <div class="absolute right-4 bottom-6 hidden group-hover:block">
             <Badge lable="Uploaded" />
@@ -130,21 +130,21 @@
             <div
               class="flex flex-col justify-start items-end flex-grow-0 flex-shrink-0 relative gap-[5px]"
             >
-              <p
+              <span
                 class="flex-grow-0 flex-shrink-0 text-[22px] font-semibold text-left text-neutral-900"
               >
                 Royalty free
-              </p>
-              <p
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 text-lg text-left text-neutral-900"
               >
                 Jewellery - Social Media
-              </p>
-              <p
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 opacity-50 text-sm text-left text-neutral-900"
               >
                 by Juno-Uno
-              </p>
+              </span>
             </div>
           </div>
           <div class="absolute right-4 bottom-6 hidden group-hover:block">
@@ -164,21 +164,21 @@
             <div
               class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative gap-2 pl-6 pt-6"
             >
-              <p
+              <span
                 class="flex-grow-0 flex-shrink-0 text-[22px] font-semibold text-left text-neutral-900"
               >
                 Personalised imagery
-              </p>
-              <p
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 text-lg text-left text-neutral-900"
               >
                 Apparel - eComm
-              </p>
-              <p
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 opacity-50 text-sm text-left text-neutral-900"
               >
                 by Stomata
-              </p>
+              </span>
             </div>
             <img
               src={image_3}
@@ -201,21 +201,21 @@
             <div
               class="flex flex-col justify-start items-end flex-grow-0 flex-shrink-0 absolute left-[156px] top-10 gap-2"
             >
-              <p
+              <span
                 class="flex-grow-0 flex-shrink-0 text-[22px] font-semibold text-right text-neutral-900"
               >
                 Easy to edit
-              </p>
-              <p
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 text-lg text-right text-black"
               >
                 Apparel - eComm
-              </p>
-              <p
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 opacity-50 text-sm text-right text-neutral-900"
               >
                 by Luke
-              </p>
+              </span>
             </div>
             <div class="absolute right-4 bottom-6 hidden group-hover:block">
               <Badge lable="Uploaded" />
@@ -235,19 +235,19 @@
           <div
             class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 absolute left-10 top-10 gap-2"
           >
-            <p
+            <span
               class="flex-grow-0 flex-shrink-0 text-[22px] font-semibold text-left text-white"
             >
               High resolution
-            </p>
-            <p class="flex-grow-0 flex-shrink-0 text-lg text-left text-white">
+            </span>
+            <span class="flex-grow-0 flex-shrink-0 text-lg text-left text-white">
               Art Project
-            </p>
-            <p
+            </span>
+            <span
               class="flex-grow-0 flex-shrink-0 opacity-50 text-sm text-left text-white"
             >
               by Luperpla
-            </p>
+            </span>
           </div>
           <div class="absolute right-4 bottom-6 hidden group-hover:block">
             <Badge lable="Uploaded" />

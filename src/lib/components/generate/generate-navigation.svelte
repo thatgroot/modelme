@@ -8,13 +8,14 @@
   <Actions
     actions={[
       {
-        name: "Generate",
+        name: "Balance: 100",
         active: true,
         actions: [
           {
             name: "Delete",
             icon: delete_icon,
             id: "delete",
+            text: "danger",
           },
         ],
       },

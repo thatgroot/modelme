@@ -14,38 +14,48 @@
     <div
       class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative gap-[94px]"
     >
-      <div class="flex-grow-0 flex-shrink-0 w-[505px] h-[199px]">
-        <p
-          class="absolute left-0 top-0 text-2xl font-semibold text-left text-[#1f206c]"
+      <div class="flex-grow-0 flex-shrink-0 w-[505px] h-[201px]">
+        <span
+          class="absolute left-0 -top-3 text-2xl font-semibold text-left text-[#1f206c]"
         >
           GENERATIVE SOFTWARE
-        </p>
+        </span>
         <div
           class="flex flex-col justify-start items-start absolute left-0 top-[13px]"
         >
           <p
-            class="flex-grow-0 flex-shrink-0 text-9xl text-left text-neutral-900"
+            class="flex-grow-0 flex-shrink-0 text-9xl text-left -tracking-[0.25rem]  text-neutral-900"
           >
             MODELME
           </p>
-          <p
-            class="flex-grow-0 flex-shrink-0 w-[505px] text-lg text-left text-[#757575]"
+
+          <div
+            class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative"
           >
-            The largest digital modeling agency in the world.
-          </p>
+            <span
+              class="flex-grow-0 flex-shrink-0 w-[505px] text-lg text-left text-[#757575]"
+            >
+              The largest digital modeling agency in the world.
+            </span>
+            <span
+              class="flex-grow-0 flex-shrink-0 w-[505px] text-lg text-left text-[#757575]"
+            >
+              Create more, with less.
+            </span>
+          </div>
         </div>
       </div>
       <div
         class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative"
       >
-        <div
+        <button
           class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-3 px-8 py-4 bg-[#1f206c]"
         >
-          <p
+          <span
             class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-white"
           >
             Generate now
-          </p>
+          </span>
           <svg
             width="25"
             height="25"
@@ -72,10 +82,12 @@
               stroke-linejoin="round"
             />
           </svg>
-        </div>
-        <p class="flex-grow-0 flex-shrink-0 text-lg text-left text-[#757575]">
+        </button>
+        <span
+          class="flex-grow-0 flex-shrink-0 text-lg text-left text-[#757575]"
+        >
           No credit card required.
-        </p>
+        </span>
       </div>
     </div>
     <div
@@ -95,19 +107,21 @@
       <div
         class="flex flex-col justify-start items-start absolute left-[25px] top-[33px] gap-2"
       >
-        <p
+        <span
           class="flex-grow-0 flex-shrink-0 text-[22px] font-semibold text-left text-neutral-900"
         >
-          Models in seconds
-        </p>
-        <p class="flex-grow-0 flex-shrink-0 text-lg text-left text-neutral-900">
+          Create more, with less
+        </span>
+        <span
+          class="flex-grow-0 flex-shrink-0 text-lg text-left text-neutral-900"
+        >
           Fashion e-Comm
-        </p>
-        <p
+        </span>
+        <span
           class="flex-grow-0 flex-shrink-0 opacity-50 text-sm text-left text-neutral-900"
         >
           by Frankie’s Shop
-        </p>
+        </span>
       </div>
     </div>
   </div>

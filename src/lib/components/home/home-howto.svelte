@@ -22,13 +22,17 @@
   <div class="flex flex-col justify-start items-center gap-[61px]">
     <div class="flex justify-start items-start relative gap-[460px]">
       <div class="flex flex-col justify-start items-start relative gap-[18px]">
-        <p class="text-lg font-semibold text-left text-[#1f206c]">HOW TO</p>
-        <p class="text-[58px] text-left text-neutral-900">GENERATE!</p>
+        <span class="text-lg font-semibold text-left text-[#1f206c]"
+          >HOW TO</span
+        >
+        <p class="text-[58px] text-left text-neutral-900 leading-[4rem]">
+          GENERATE!
+        </p>
       </div>
-      <p class="w-[570px] text-lg text-left text-[#757575]">
+      <span class="w-[570px] text-lg text-left text-[#757575]">
         Your products, your generated models. Apply the same generated model to
         all your product and company imagery.
-      </p>
+      </span>
     </div>
     <div class="flex flex-col justify-start items-start relative gap-2.5 p-2.5">
       <svg
@@ -69,15 +73,14 @@
   </div>
   <div class="flex justify-start items-start gap-[42px]">
     <div
-      class="flex flex-col justify-start items-end relative group h-[578px]"
-      style="background: linear-gradient(134.88deg, #ececec -9.28%, rgba(236,236,236,0) 109.69%);"
+      class="flex flex-col justify-start items-end flex-grow-0 group flex-shrink-0 relative h-[578px] overflow-hidden"
     >
       <img
         src={image_19}
         alt="..."
         class="w-[402px] object-contain group-hover:blur-3xl"
       />
-      <div class="absolute bottom-2 right-3">
+      <div class="absolute bottom-2 right-3 group-hover:blur-3xl">
         <Badge lable="#1 Upload" />
       </div>
       <CardOverlay
@@ -91,14 +94,13 @@
       />
     </div>
     <div
-      class="flex flex-col justify-start items-center self-stretch group  h-[578px]  relative overflow-hidden gap-3 px-1.5"
-      style="background: linear-gradient(134.88deg, #ececec -9.28%, rgba(236,236,236,0) 109.69%);"
+      class="flex flex-col justify-start items-end flex-grow-0 group flex-shrink-0 relative h-[578px] overflow-hidden"
     >
       <div
         class="flex flex-col justify-start items-center group-hover:blur-3xl h-full"
       >
         <div
-          class="flex justify-start items-end flex-grow relative gap-3 h-[96px] "
+          class="flex justify-start items-end flex-grow relative gap-3 h-[96px]"
         >
           <img
             src={image_23}
@@ -148,7 +150,7 @@
         </div>
       </div>
 
-      <div class="absolute bottom-2 right-3">
+      <div class="absolute bottom-2 right-3 group-hover:blur-3xl">
         <Badge lable="#2 Select" />
       </div>
 
@@ -159,13 +161,15 @@
         perks={[
           "Diversity - choose from 50 different female models",
           "Consistency - the same model can be used across poses and images",
-          "Coming soon... we will allow users to design their own models",
         ]}
-      />
+      >
+        <span slot="footer" class="w-[312px] text-lg text-left text-white">
+          Coming soon... we will allow users to design their own models
+        </span>
+      </CardOverlay>
     </div>
     <div
-      class="flex flex-col justify-start items-end flex-grow-0 group flex-shrink-0 relative h-[578px]"
-      style="background: linear-gradient(134.88deg, #ececec -9.28%, rgba(236,236,236,0) 109.69%);"
+      class="flex flex-col justify-start items-end flex-grow-0 group flex-shrink-0 relative h-[578px] overflow-hidden"
     >
       <img
         src={image_19}
@@ -173,7 +177,7 @@
         class="w-[402px] h-[578px] object-cover group-hover:blur-3xl"
       />
 
-      <div class="absolute bottom-2 right-3">
+      <div class="absolute bottom-2 right-3 group-hover:blur-3xl">
         <Badge lable="#3 Generate" />
       </div>
 
@@ -195,10 +199,10 @@
       <img
         src={image_30}
         alt="..."
-        class="self-stretch h-[408px] object-cover group-hover:blur-3xl"
+        class="self-stretch h-[408px] object-cover group-hover:blur-2xl"
       />
       <span
-        class=" absolute top-6 left-6 text-[22px] font-semibold text-left text-white  group-hover:blur-3xl"
+        class=" absolute top-6 left-6 text-[22px] font-semibold text-left text-white group-hover:blur-3xl"
       >
         MODELME
       </span>
@@ -208,14 +212,53 @@
         title="MODELME"
         subtitle="MODELME vs Traditional Photoshoot"
         instruction=""
-        perks={[
-          "Endless model diversity at your fingertips",
-          "Intuitive software for beginners",
-          "Change model, hair, makeup, expression, with a click",
-          "Stress-free image generation in seconds",
-          "Royalty free digital models that cost cents",
-        ]}
-      />
+        perks={[]}
+      >
+        <ul class="!list-disc text-lg text-left text-white">
+          <li>
+            <span class="text-lg font-bold text-left text-white">Endless</span>
+            <span class="text-lg text-left text-white">
+              model diversity at your
+            </span>
+            <span class="text-lg font-bold text-left text-white"
+              >fingertips</span
+            >
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white">Intuitive</span
+            >
+            <span class="text-lg text-left text-white"> software for </span>
+            <span class="text-lg font-bold text-left text-white">beginners</span
+            >
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white">Change</span>
+            <span class="text-lg text-left text-white">
+              model, hair, makeup, expression, with a
+            </span>
+            <span class="text-lg font-bold text-left text-white">click</span>
+            <span class="text-lg text-left text-white" />
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white"
+              >Stress-free</span
+            >
+            <span class="text-lg text-left text-white">
+              image generation in
+            </span>
+            <span class="text-lg font-bold text-left text-white">seconds</span>
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white"
+              >Royalty free</span
+            >
+            <span class="text-lg text-left text-white">
+              digital models that cost
+            </span>
+            <span class="text-lg font-bold text-left text-white">cents</span>
+          </li>
+        </ul>
+      </CardOverlay>
     </div>
     <div
       class="flex flex-col justify-start items-start flex-grow relative group overflow-hidden"
@@ -223,10 +266,10 @@
       <img
         src={image_31}
         alt="..."
-        class="self-stretch h-[408px] object-cover group-hover:blur-3xl"
+        class="self-stretch h-[408px] object-cover group-hover:blur-2xl"
       />
       <span
-        class="text-[22px] font-semibold absolute top-6 left-6 text-left text-white  group-hover:blur-3xl"
+        class="text-[22px] font-semibold absolute top-6 left-6 text-left text-white group-hover:blur-3xl"
       >
         Traditional Photoshoot
       </span>
@@ -236,25 +279,58 @@
         title="Traditional Photoshoot"
         subtitle="MODELME vs Traditional Photoshoot"
         instruction=""
-        perks={[
-          "Limited by model availability and their location",
-          "Hundreds of dollars in models, hair and makeup costs",
-          "High effort in coordinating models, hair and makeup",
-          "Days of shooting and planning",
-          "Costly re-shoot required for substantial changes to the model",
-        ]}
-      />
+        perks={[]}
+      >
+        <ul class="!list-disc text-lg text-left text-white">
+          <li>
+            <span class="text-lg font-bold text-left text-white">Limited</span>
+            <span class="text-lg text-left text-white">
+              by model availability and their location</span
+            >
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white">Hundreds</span>
+            <span class="text-lg text-left text-white">
+              of dollars in models, hair and makeup costs</span
+            >
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white"
+              >High effort</span
+            >
+            <span class="text-lg text-left text-white">
+              in coordinating models, hair and makeup</span
+            >
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white">Days</span>
+            <span class="text-lg text-left text-white">
+              of shooting and planning</span
+            >
+          </li>
+          <li>
+            <span class="text-lg font-bold text-left text-white">
+              Costly re-shoot
+            </span>
+            <span class="text-lg text-left text-white">
+              required for substantial changes to the model
+            </span>
+          </li>
+        </ul>
+      </CardOverlay>
     </div>
   </div>
-  <div class="flex justify-start items-center  gap-3 relative">
-    <p class=" text-lg text-left text-[#757575]">
+  <div class="flex justify-start items-center gap-3 relative">
+    <span class=" text-lg text-left text-[#757575]">
       Questions about your specific use-case or the generation process? We would
       love to help.
-    </p>
-    <div
+    </span>
+    <button
       class="flex justify-start items-center relative gap-3 px-8 py-4 bg-white border border-[#1f206c]"
     >
-      <p class="text-lg font-medium text-left text-[#1f206c]">Contact us</p>
+      <span class="text-lg font-medium text-left text-[#1f206c]"
+        >Contact us</span
+      >
       <svg
         width="24"
         height="25"
@@ -281,6 +357,6 @@
           stroke-linejoin="round"
         />
       </svg>
-    </div>
+    </button>
   </div>
 </div>

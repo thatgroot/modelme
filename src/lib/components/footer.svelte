@@ -3,23 +3,68 @@
 </script>
 
 <div
-  class="flex flex-col items-center  gap-9 justify-center w-full h-[220px] px-16 relative overflow-hidden bg-white"
+  class="flex flex-col items-center gap-9 justify-center h-[220px] mt-[103px] px-16 relative overflow-hidden bg-white border-t-[1px] box-border w-[-webkit-fill-available] -ml-14 -mr-14"
+  style="border-color:rgba(35, 35, 35, 0.16)"
 >
   <div class="flex justify-between items-center w-full">
     <div
       class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-3"
     >
-        <img
-          src={logo}
-          alt="logo"
-          class="w-[82.52px] h-[52.12px] object-cover border border-black p-2"
-          />
+      <img
+        src={logo}
+        alt="logo"
+        class="w-[82.52px] h-[52.12px] object-cover border border-black p-2"
+      />
       <p
         class="flex-grow-0 flex-shrink-0 text-[50px] text-left text-neutral-900"
       >
         MODELME
       </p>
     </div>
+    <div
+      class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-3"
+    >
+      <span
+        class="flex-grow-0 flex-shrink-0 w-[211px] opacity-50 text-lg text-left text-black"
+      >
+        Sign up to our newsletter
+      </span>
+      <button
+        class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-3 px-8 py-4 bg-white border border-[#1f206c]"
+      >
+        <span
+          class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-[#1f206c]"
+          >Subscribe</span
+        >
+        <svg
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M14.4297 6.50464L20.4997 12.5746L14.4297 18.6446"
+            stroke="#1F206C"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M3.5 12.5746H20.33"
+            stroke="#1F206C"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+
     <div
       class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-8"
     >
@@ -33,23 +78,11 @@
         preserveAspectRatio="none"
       >
         <path
-          d="M16.19 2.57458H7.81C4.17 2.57458 2 4.74458 2 8.38458V16.7546C2 20.4046 4.17 22.5746 7.81 22.5746H16.18C19.82 22.5746 21.99 20.4046 21.99 16.7646V8.38458C22 4.74458 19.83 2.57458 16.19 2.57458ZM12 16.4546C9.86 16.4546 8.12 14.7146 8.12 12.5746C8.12 10.4346 9.86 8.69458 12 8.69458C14.14 8.69458 15.88 10.4346 15.88 12.5746C15.88 14.7146 14.14 16.4546 12 16.4546ZM17.92 7.45459C17.87 7.57459 17.8 7.68458 17.71 7.78458C17.61 7.87459 17.5 7.94459 17.38 7.99459C17.26 8.04459 17.13 8.07458 17 8.07458C16.73 8.07458 16.48 7.97458 16.29 7.78458C16.2 7.68458 16.13 7.57459 16.08 7.45459C16.03 7.33459 16 7.20458 16 7.07458C16 6.94458 16.03 6.81458 16.08 6.69458C16.13 6.56458 16.2 6.46458 16.29 6.36458C16.52 6.13458 16.87 6.02458 17.19 6.09458C17.26 6.10458 17.32 6.12458 17.38 6.15458C17.44 6.17458 17.5 6.20459 17.56 6.24459C17.61 6.27459 17.66 6.32458 17.71 6.36458C17.8 6.46458 17.87 6.56458 17.92 6.69458C17.97 6.81458 18 6.94458 18 7.07458C18 7.20458 17.97 7.33459 17.92 7.45459Z"
-          fill="#1F206C"
-        /></svg
-      ><svg
-        width="24"
-        height="25"
-        viewBox="0 0 24 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
-        preserveAspectRatio="none"
-      >
-        <path
           d="M22 16.7646C22 20.4046 19.83 22.5746 16.19 22.5746H15C14.45 22.5746 14 22.1246 14 21.5746V15.8046C14 15.5346 14.22 15.3046 14.49 15.3046L16.25 15.2746C16.39 15.2646 16.51 15.1646 16.54 15.0246L16.89 13.1146C16.92 12.9346 16.78 12.7646 16.59 12.7646L14.46 12.7946C14.18 12.7946 13.96 12.5746 13.95 12.3046L13.91 9.85458C13.91 9.69458 14.04 9.5546 14.21 9.5546L16.61 9.51459C16.78 9.51459 16.91 9.3846 16.91 9.2146L16.87 6.81458C16.87 6.64458 16.74 6.51459 16.57 6.51459L13.87 6.5546C12.21 6.5846 10.89 7.94458 10.92 9.60458L10.97 12.3546C10.98 12.6346 10.76 12.8546 10.48 12.8646L9.28 12.8846C9.11 12.8846 8.98001 13.0146 8.98001 13.1846L9.01001 15.0846C9.01001 15.2546 9.14 15.3846 9.31 15.3846L10.51 15.3646C10.79 15.3646 11.01 15.5846 11.02 15.8546L11.11 21.5546C11.12 22.1146 10.67 22.5746 10.11 22.5746H7.81C4.17 22.5746 2 20.4046 2 16.7546V8.38458C2 4.74458 4.17 2.57458 7.81 2.57458H16.19C19.83 2.57458 22 4.74458 22 8.38458V16.7646V16.7646Z"
           fill="#1F206C"
-        /></svg
-      ><svg
+        />
+      </svg>
+      <svg
         width="24"
         height="25"
         viewBox="0 0 24 25"
@@ -61,8 +94,9 @@
         <path
           d="M7.54752 22.3252C16.6042 22.3252 21.5578 14.8219 21.5578 8.31498C21.5578 8.10186 21.5578 7.8897 21.5434 7.6785C22.507 6.98146 23.3389 6.11839 24 5.1297C23.1014 5.5281 22.148 5.78926 21.1718 5.90442C22.1998 5.28911 22.9692 4.32121 23.3366 3.1809C22.3701 3.75451 21.3126 4.15873 20.2099 4.3761C19.4675 3.58668 18.4856 3.06394 17.4162 2.88879C16.3468 2.71363 15.2494 2.89582 14.294 3.40716C13.3385 3.91849 12.5782 4.73048 12.1307 5.71745C11.6833 6.70443 11.5735 7.81137 11.8186 8.86698C9.86089 8.76878 7.94576 8.26001 6.19745 7.37371C4.44915 6.4874 2.90676 5.24336 1.6704 3.72234C1.04073 4.80634 0.847872 6.08957 1.1311 7.31077C1.41433 8.53196 2.15234 9.5993 3.19488 10.2955C2.41123 10.2725 1.64465 10.0611 0.96 9.67914V9.74154C0.960311 10.8784 1.35385 11.9801 2.07387 12.8599C2.79389 13.7397 3.79606 14.3433 4.9104 14.5684C4.18548 14.7662 3.42487 14.7951 2.68704 14.6529C3.00181 15.6312 3.61443 16.4867 4.43924 17.0998C5.26405 17.7129 6.25983 18.053 7.28736 18.0724C6.26644 18.8749 5.09731 19.4682 3.84687 19.8184C2.59643 20.1686 1.28921 20.2689 0 20.1134C2.25183 21.5584 4.87192 22.3249 7.54752 22.3214"
           fill="#1F206C"
-        /></svg
-      ><svg
+        />
+      </svg>
+      <svg
         width="24"
         height="25"
         viewBox="0 0 24 25"
@@ -86,8 +120,9 @@
               transform="translate(0 0.574585)"
             />
           </clipPath>
-        </defs></svg
-      ><svg
+        </defs>
+      </svg>
+      <svg
         width="24"
         height="25"
         viewBox="0 0 24 25"
@@ -117,23 +152,23 @@
   </div>
 
   <div class="flex justify-between items-center w-full">
-    <p
+    <span
       class="flex-grow-0 flex-shrink-0 opacity-50 text-lg text-left text-black"
     >
       © 2023 ModelMe UG (haftungsbeschränkt), All rights reserved.
-    </p>
+    </span>
     <div
       class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative opacity-50 gap-12"
     >
-      <p class="flex-grow-0 flex-shrink-0 text-lg text-left text-black">
+      <span class="flex-grow-0 flex-shrink-0 text-lg text-left text-black">
         Privacy Policy
-      </p>
-      <p class="flex-grow-0 flex-shrink-0 text-lg text-left text-black">
+      </span>
+      <span class="flex-grow-0 flex-shrink-0 text-lg text-left text-black">
         Terms &#x26; Conditions
-      </p>
-      <p class="flex-grow-0 flex-shrink-0 text-lg text-left text-black">
+      </span>
+      <span class="flex-grow-0 flex-shrink-0 text-lg text-left text-black">
         Cookies
-      </p>
+      </span>
     </div>
   </div>
 </div>

@@ -5,7 +5,7 @@
 <div
   class="flex relative justify-start px-2 items-center w-[163px] h-[42px]"
 >
-  <p class="text-lg font-bold text-left text-white z-[999] py-5">{lable}</p>
+  <span class="text-lg font-bold text-left text-white z-[999] py-5">{lable}</span>
 
   <svg
     width="163"

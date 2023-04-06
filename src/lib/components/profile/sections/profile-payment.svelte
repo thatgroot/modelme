@@ -1,92 +1,97 @@
 <script lang="ts">
   import Modal from "../../modal.svelte";
-
+  import arrow_left from "../../../../assets/icons/arrow-left.svg";
+  import close_svg from "../../../../assets/icons/close.svg";
+  import Radio from "../../radio.svelte";
+  import Input from "../../input.svelte";
   let show_modal: boolean = false;
+  let payment_method: "paypal" | "stripe" = "paypal";
 </script>
 
 <div class="flex justify-start items-start gap-[17px]">
-  <div
-    class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[436px] gap-6 p-6 bg-white"
-  >
+  <div class="flex flex-col justify-start items-start w-[436px] gap-6">
+    <p class="text-9xl text-left text-[#232323] leading-[0.85]">Profile</p>
     <div
-      class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 relative gap-4 p-4 bg-[#1f206c]"
+      class="flex flex-col justify-start items-start w-[436px] gap-6 p-6 bg-white"
     >
-      <svg
-        width="24"
-        height="25"
-        viewBox="0 0 24 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
-        preserveAspectRatio="none"
+      <button
+        class="flex justify-start items-center self-stretch relative gap-4 p-4 bg-[#1f206c]"
       >
-        <path
-          d="M12 12.5C14.7614 12.5 17 10.2614 17 7.5C17 4.73858 14.7614 2.5 12 2.5C9.23858 2.5 7 4.73858 7 7.5C7 10.2614 9.23858 12.5 12 12.5Z"
-          fill="white"
-        />
-        <path
-          d="M12.0002 15C6.99016 15 2.91016 18.36 2.91016 22.5C2.91016 22.78 3.13016 23 3.41016 23H20.5902C20.8702 23 21.0902 22.78 21.0902 22.5C21.0902 18.36 17.0102 15 12.0002 15Z"
-          fill="white"
-        />
-      </svg>
-      <p
-        class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-white"
+        <svg
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M12 12.5C14.7614 12.5 17 10.2614 17 7.5C17 4.73858 14.7614 2.5 12 2.5C9.23858 2.5 7 4.73858 7 7.5C7 10.2614 9.23858 12.5 12 12.5Z"
+            fill="white"
+          />
+          <path
+            d="M12.0002 15C6.99016 15 2.91016 18.36 2.91016 22.5C2.91016 22.78 3.13016 23 3.41016 23H20.5902C20.8702 23 21.0902 22.78 21.0902 22.5C21.0902 18.36 17.0102 15 12.0002 15Z"
+            fill="white"
+          />
+        </svg>
+        <span
+          class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-white"
+        >
+          General
+        </span>
+      </button>
+      <button
+        class="flex justify-start items-center self-stretch relative gap-4 p-4 bg-white"
       >
-        General
-      </p>
-    </div>
-    <div
-      class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 relative gap-4 p-4 bg-white"
-    >
-      <svg
-        width="24"
-        height="25"
-        viewBox="0 0 24 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M17.4395 15.12L19.9995 12.56L17.4395 10"
-          stroke="#EB5842"
-          stroke-width="1.5"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M9.75977 12.56H19.9298"
-          stroke="#EB5842"
-          stroke-width="1.5"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M11.7598 20.5C7.33977 20.5 3.75977 17.5 3.75977 12.5C3.75977 7.5 7.33977 4.5 11.7598 4.5"
-          stroke="#EB5842"
-          stroke-width="1.5"
-          stroke-miterlimit="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-      <p
-        class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-[#eb5842]"
-      >
-        Logout
-      </p>
+        <svg
+          width="24"
+          height="25"
+          viewBox="0 0 24 25"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M17.4395 15.12L19.9995 12.56L17.4395 10"
+            stroke="#EB5842"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.75977 12.56H19.9298"
+            stroke="#EB5842"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.7598 20.5C7.33977 20.5 3.75977 17.5 3.75977 12.5C3.75977 7.5 7.33977 4.5 11.7598 4.5"
+            stroke="#EB5842"
+            stroke-width="1.5"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span
+          class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-[#eb5842]"
+        >
+          Logout
+        </span>
+      </button>
     </div>
   </div>
-  <div
-    class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 gap-8"
-  >
+  <div class="flex flex-col justify-start items-start gap-8">
     <div
-      class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[888px] relative gap-8 p-8 bg-white"
+      class="flex flex-col justify-start items-start w-[888px] relative gap-8 p-8 bg-white"
     >
       <div
-        class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-4"
+        class="flex flex-col justify-start items-start self-stretch relative gap-4"
       >
         <p
           class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#232323]"
@@ -94,335 +99,105 @@
           Account Information
         </p>
         <div
-          class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2"
+          class="flex flex-col justify-start items-start self-stretch relative gap-2"
         >
           <p
             class="flex-grow-0 flex-shrink-0 w-[327px] text-sm font-semibold text-left text-[#232323]"
           >
             Email
           </p>
-          <div
-            class="flex flex-col justify-center items-center self-stretch flex-grow-0 flex-shrink-0 relative p-4 bg-[#e9e9f0] border border-[#1f206c]"
-          >
-            <p
-              class="self-stretch flex-grow-0 flex-shrink-0 w-[792px] text-lg font-medium text-left text-[#1f206c]"
-            >
-              ganteng@mail.com
-            </p>
-          </div>
+          <Input placeholder="ganteng@mail.com" width="w-full" type="email" />
         </div>
         <div
-          class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2"
+          class="flex flex-col justify-start items-start self-stretch relative gap-2"
         >
           <p
             class="flex-grow-0 flex-shrink-0 w-[327px] text-sm font-semibold text-left text-[#232323]"
           >
             Password
           </p>
-          <div
-            class="flex flex-col justify-center items-center self-stretch flex-grow-0 flex-shrink-0 p-4 bg-[#e9e9f0] border border-[#1f206c]"
-          >
-            <div
-              class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 h-[27px] relative gap-2"
-            >
-              <svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" /></svg
-              ><svg
-                width="8"
-                height="9"
-                viewBox="0 0 8 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="flex-grow-0 flex-shrink-0"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <circle cx="4" cy="4.5" r="4" fill="#232323" />
-              </svg>
-            </div>
-          </div>
+          <Input
+            placeholder="********"
+            value="********"
+            width="w-full"
+            type="password"
+          />
         </div>
       </div>
       <div
-        class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-4"
+        class="flex flex-col justify-start items-start self-stretch relative gap-4"
       >
         <p
           class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#232323]"
         >
           Subscriptions
         </p>
-        <div
-          class="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-2"
-        >
-          <div
-            class="flex flex-col justify-start items-center flex-grow relative bg-[#626398]"
-          >
+        <div class="flex justify-start items-start self-stretch gap-2">
+          {#each [{ color: "bg-[#626398]", title: "Subscription Title", detail: "Lorem ipsum dolor sit amet consectetur. A in aliquet a ac volutpat." }, { color: "bg-[#4f4f4f]", title: "Subscription Title", detail: "Lorem ipsum dolor sit amet consectetur. A in aliquet a ac volutpat." }, { color: "bg-[#339dff]", title: "Subscription Title", detail: "Lorem ipsum dolor sit amet consectetur. A in aliquet a ac volutpat." }] as { title, detail, color }}
             <div
-              class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2 p-4"
+              class="flex flex-col justify-start items-center flex-grow relative {color}"
             >
               <div
-                class="flex justify-between items-center self-stretch flex-grow-0 flex-shrink-0 relative"
+                class="flex flex-col justify-start items-start self-stretch relative gap-2 p-4"
               >
-                <p
-                  class="flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-white"
+                <div
+                  class="flex justify-between items-center self-stretch relative"
                 >
-                  Subscription Title
-                </p>
-                <svg
-                  width="19"
-                  height="19"
-                  viewBox="0 0 19 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="flex-grow-0 flex-shrink-0 w-[18px] h-[18px] relative"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <path
-                    d="M9.33398 2C5.20148 2 1.83398 5.3675 1.83398 9.5C1.83398 13.6325 5.20148 17 9.33398 17C13.4665 17 16.834 13.6325 16.834 9.5C16.834 5.3675 13.4665 2 9.33398 2ZM12.919 7.775L8.66648 12.0275C8.56148 12.1325 8.41898 12.1925 8.26898 12.1925C8.11898 12.1925 7.97648 12.1325 7.87148 12.0275L5.74898 9.905C5.53148 9.6875 5.53148 9.3275 5.74898 9.11C5.96648 8.8925 6.32648 8.8925 6.54398 9.11L8.26898 10.835L12.124 6.98C12.3415 6.7625 12.7015 6.7625 12.919 6.98C13.1365 7.1975 13.1365 7.55 12.919 7.775Z"
-                    fill="white"
+                  <p
+                    class="flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-white"
+                  >
+                    {title}
+                  </p>
+                  <Radio
+                    border="border-[#ffffff]"
+                    white={true}
+                    name="subscription"
+                    value={title}
                   />
-                </svg>
-              </div>
-              <p
-                class="flex-grow-0 flex-shrink-0 w-[215px] text-xs text-left text-[#a5a6c4]"
-              >
-                Lorem ipsum dolor sit amet consectetur. A in aliquet a ac
-                volutpat.
-              </p>
-            </div>
-            <svg
-              width="248"
-              height="2"
-              viewBox="0 0 248 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="flex-grow-0 flex-shrink-0"
-              preserveAspectRatio="none"
-            >
-              <path d="M0.166016 1H247.166" stroke="#D9D9D9" />
-            </svg>
-            <div
-              class="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-4 bg-[#f9f9f9]"
-            >
-              <p
-                class="flex-grow w-[113.67px] text-xs text-left text-[#9a9a9a]"
-              >
-                Learn more
-              </p>
-              <p
-                class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
-              >
-                <span
-                  class="flex-grow w-[113.67px] text-xs font-semibold text-right text-[#232323]"
-                  >$10.99</span
-                ><span
-                  class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
-                  >/month</span
+                </div>
+                <p
+                  class="flex-grow-0 flex-shrink-0 w-[215px] text-xs text-left text-[#a5a6c4]"
                 >
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col justify-start items-center flex-grow relative bg-[#4f4f4f]"
-          >
-            <div
-              class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2 p-4"
-            >
+                  {detail}
+                </p>
+              </div>
+              <svg
+                width="248"
+                height="2"
+                viewBox="0 0 248 2"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="flex-grow-0 flex-shrink-0"
+                preserveAspectRatio="none"
+              >
+                <path d="M0.166016 1H247.166" stroke="#D9D9D9" />
+              </svg>
               <div
-                class="flex justify-between items-center self-stretch flex-grow-0 flex-shrink-0 relative"
+                class="flex justify-start items-start self-stretch relative gap-2.5 p-4 bg-[#f9f9f9]"
               >
                 <p
-                  class="flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-white"
+                  class="flex-grow w-[113.67px] text-xs text-left text-[#9a9a9a]"
                 >
-                  Subscription Title
+                  Learn more
                 </p>
-                <svg
-                  width="19"
-                  height="19"
-                  viewBox="0 0 19 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="flex-grow-0 flex-shrink-0"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <circle cx="9.66797" cy="9.5" r="8.5" stroke="white" />
-                </svg>
-              </div>
-              <p
-                class="flex-grow-0 flex-shrink-0 w-[215px] text-xs text-left text-[#9a9a9a]"
-              >
-                Lorem ipsum dolor sit amet consectetur. A in aliquet a ac
-                volutpat.
-              </p>
-            </div>
-            <svg
-              width="248"
-              height="2"
-              viewBox="0 0 248 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="flex-grow-0 flex-shrink-0"
-              preserveAspectRatio="none"
-            >
-              <path d="M0.5 1H247.5" stroke="#D9D9D9" />
-            </svg>
-            <div
-              class="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-4 bg-[#f9f9f9]"
-            >
-              <p
-                class="flex-grow w-[113.67px] text-xs text-left text-[#9a9a9a]"
-              >
-                Learn more
-              </p>
-              <p
-                class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
-              >
-                <span
-                  class="flex-grow w-[113.67px] text-xs font-semibold text-right text-[#232323]"
-                  >$10.99</span
-                ><span
-                  class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
-                  >/month</span
-                >
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col justify-start items-center flex-grow relative bg-[#339dff]"
-          >
-            <div
-              class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2 p-4"
-            >
-              <div
-                class="flex justify-between items-center self-stretch flex-grow-0 flex-shrink-0 relative"
-              >
                 <p
-                  class="flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-white"
-                >
-                  Subscription Title
-                </p>
-                <svg
-                  width="18"
-                  height="19"
-                  viewBox="0 0 18 19"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="flex-grow-0 flex-shrink-0"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <circle cx="9" cy="9.5" r="8.5" stroke="white" />
-                </svg>
-              </div>
-              <p
-                class="flex-grow-0 flex-shrink-0 w-[215px] text-xs text-left text-[#e5f3ff]"
-              >
-                Lorem ipsum dolor sit amet consectetur. A in aliquet a ac
-                volutpat.
-              </p>
-            </div>
-            <svg
-              width="248"
-              height="2"
-              viewBox="0 0 248 2"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="flex-grow-0 flex-shrink-0"
-              preserveAspectRatio="none"
-            >
-              <path d="M0.832031 1H247.832" stroke="#D9D9D9" />
-            </svg>
-            <div
-              class="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-4 bg-[#f9f9f9]"
-            >
-              <p
-                class="flex-grow w-[113.67px] text-xs text-left text-[#9a9a9a]"
-              >
-                Learn more
-              </p>
-              <p
-                class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
-              >
-                <span
-                  class="flex-grow w-[113.67px] text-xs font-semibold text-right text-[#232323]"
-                  >$10.99</span
-                ><span
                   class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
-                  >/month</span
                 >
-              </p>
+                  <span
+                    class="flex-grow w-[113.67px] text-xs font-semibold text-right text-[#232323]"
+                    >$10.99</span
+                  ><span
+                    class="flex-grow w-[113.67px] text-xs text-right text-[#232323]"
+                    >/month</span
+                  >
+                </p>
+              </div>
             </div>
-          </div>
+          {/each}
         </div>
       </div>
       <div
-        class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-4"
+        class="flex flex-col justify-start items-start self-stretch relative gap-4"
       >
         <p
           class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#232323]"
@@ -430,7 +205,7 @@
           Payment
         </p>
         <div
-          class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 relative gap-4"
+          class="flex justify-start items-center self-stretch relative gap-4"
         >
           <svg
             width="64"
@@ -528,79 +303,61 @@
       >
         Delete Account
       </p>
-      <div
-        class="flex justify-end items-start self-stretch flex-grow-0 flex-shrink-0 gap-3"
-      >
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-36 relative gap-2 p-4 bg-[#1f206c]"
+      <div class="flex justify-end items-start self-stretch gap-3">
+        <button
+          class="flex justify-center items-center w-36 relative gap-2 p-4 bg-[#1f206c]"
         >
-          <p
+          <span
             class="flex-grow-0 flex-shrink-0 text-base font-medium text-center text-white"
           >
             Save Changes
-          </p>
-        </div>
+          </span>
+        </button>
       </div>
     </div>
     <div
-      class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[888px] gap-8 p-8 bg-white"
+      class="flex flex-col justify-start items-start w-[888px] gap-8 p-8 bg-white"
     >
-      <div
-        class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-6"
-      >
+      <div class="flex flex-col justify-start items-start self-stretch gap-6">
         <div
-          class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-8"
+          class="flex flex-col justify-start items-start self-stretch relative gap-8"
         >
           <p
             class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#232323]"
           >
             Manage Team Members
           </p>
-          <div
-            class="flex justify-start items-end self-stretch flex-grow-0 flex-shrink-0 gap-4"
-          >
-            <div
-              class="flex flex-col justify-start items-start flex-grow relative gap-2"
+          <div class="flex justify-start items-end self-stretch gap-4">
+            <Input
+              name="email"
+              type="email"
+              id="email"
+              placeholder="ganteng@mail.com"
+              width="w-full"
+            />
+
+            <button
+              class="flex justify-center items-center w-36 relative gap-2 p-4 bg-[#1f206c]"
             >
-              <p
-                class="flex-grow-0 flex-shrink-0 w-[327px] text-sm font-semibold text-left text-[#232323]"
-              >
-                Email
-              </p>
-              <div
-                class="flex flex-col justify-center items-center self-stretch flex-grow-0 flex-shrink-0 relative p-4 bg-[#e9e9f0] border border-[#1f206c]"
-              >
-                <p
-                  class="self-stretch flex-grow-0 flex-shrink-0 w-[632px] text-lg font-medium text-left text-[#1f206c]"
-                >
-                  ganteng@mail.com
-                </p>
-              </div>
-            </div>
-            <div
-              class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-36 relative gap-2 p-4 bg-[#1f206c]"
-            >
-              <p
+              <span
                 class="flex-grow-0 flex-shrink-0 text-base font-medium text-center text-white"
               >
                 Invite
-              </p>
-            </div>
+              </span>
+            </button>
           </div>
         </div>
-        <div
-          class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-4"
-        >
-          <div
-            class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 gap-8"
-          >
+        <div class="flex flex-col justify-start items-start self-stretch gap-4">
+          <div class="flex justify-start items-center self-stretch gap-8">
             <div
               class="flex justify-start items-center flex-grow relative gap-4"
             >
-              <img class="flex-grow-0 flex-shrink-0" src="ellipse-428.png" />
-              <div
-                class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative"
-              >
+              <img
+                alt="..."
+                class="flex-grow-0 flex-shrink-0"
+                src="ellipse-428.png"
+              />
+              <div class="flex flex-col justify-start items-start relative">
                 <p
                   class="flex-grow-0 flex-shrink-0 text-xs font-medium text-left text-[#232323]"
                 >
@@ -613,9 +370,7 @@
                 </p>
               </div>
             </div>
-            <div
-              class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-2"
-            >
+            <div class="flex justify-start items-center relative gap-2">
               <p
                 class="flex-grow-0 flex-shrink-0 text-xs font-medium text-left text-[#9a9a9a]"
               >
@@ -640,9 +395,7 @@
                 />
               </svg>
             </div>
-            <div
-              class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-2"
-            >
+            <div class="flex justify-start items-start relative gap-2">
               <svg
                 width="18"
                 height="18"
@@ -695,16 +448,16 @@
               </p>
             </div>
           </div>
-          <div
-            class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 gap-8"
-          >
+          <div class="flex justify-start items-center self-stretch gap-8">
             <div
               class="flex justify-start items-center flex-grow relative gap-4"
             >
-              <img class="flex-grow-0 flex-shrink-0" src="ellipse-428.png" />
-              <div
-                class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative"
-              >
+              <img
+                alt="..."
+                class="flex-grow-0 flex-shrink-0"
+                src="ellipse-428.png"
+              />
+              <div class="flex flex-col justify-start items-start relative">
                 <p
                   class="flex-grow-0 flex-shrink-0 text-xs font-medium text-left text-[#232323]"
                 >
@@ -717,9 +470,7 @@
                 </p>
               </div>
             </div>
-            <div
-              class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-2"
-            >
+            <div class="flex justify-start items-center relative gap-2">
               <p
                 class="flex-grow-0 flex-shrink-0 text-xs font-medium text-left text-[#9a9a9a]"
               >
@@ -744,9 +495,7 @@
                 />
               </svg>
             </div>
-            <div
-              class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-2"
-            >
+            <div class="flex justify-start items-start relative gap-2">
               <svg
                 width="18"
                 height="18"
@@ -799,16 +548,16 @@
               </p>
             </div>
           </div>
-          <div
-            class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 gap-8"
-          >
+          <div class="flex justify-start items-center self-stretch gap-8">
             <div
               class="flex justify-start items-center flex-grow relative gap-4"
             >
-              <img class="flex-grow-0 flex-shrink-0" src="ellipse-428.png" />
-              <div
-                class="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 relative"
-              >
+              <img
+                alt="..."
+                class="flex-grow-0 flex-shrink-0"
+                src="ellipse-428.png"
+              />
+              <div class="flex flex-col justify-start items-start relative">
                 <p
                   class="flex-grow-0 flex-shrink-0 text-xs font-medium text-left text-[#232323]"
                 >
@@ -821,9 +570,7 @@
                 </p>
               </div>
             </div>
-            <div
-              class="flex justify-start items-center flex-grow-0 flex-shrink-0 relative gap-2"
-            >
+            <div class="flex justify-start items-center relative gap-2">
               <p
                 class="flex-grow-0 flex-shrink-0 text-xs font-medium text-left text-[#9a9a9a]"
               >
@@ -848,9 +595,7 @@
                 />
               </svg>
             </div>
-            <div
-              class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-2"
-            >
+            <div class="flex justify-start items-start relative gap-2">
               <svg
                 width="18"
                 height="18"
@@ -904,15 +649,15 @@
             </div>
           </div>
         </div>
-        <div
-          class="flex justify-center items-center self-stretch flex-grow-0 flex-shrink-0 relative gap-2 p-3 bg-[#e9e9e9]"
+        <button
+          class="flex justify-center items-center self-stretch relative gap-2 p-3 bg-[#e9e9e9]"
         >
-          <p
+          <span
             class="flex-grow-0 flex-shrink-0 text-sm font-medium text-center text-[#232323]"
           >
             Show All Team Members
-          </p>
-        </div>
+          </span>
+        </button>
       </div>
     </div>
   </div>
@@ -924,76 +669,45 @@
     }}
   >
     <div
-      class="flex flex-col justify-start items-center flex-grow-0 flex-shrink-0 relative gap-6 px-8 pt-8 pb-[72px] bg-white"
+      class="flex flex-col justify-start items-center relative gap-6 px-8 pt-8 pb-[72px] bg-white"
     >
-      <div
-        class="flex justify-between items-center self-stretch flex-grow-0 flex-shrink-0 relative"
-      >
+      <div class="flex justify-between items-center self-stretch relative">
         <div
-          class="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 w-[182px] relative gap-4"
+          class="flex justify-start items-center self-stretch w-[182px] relative gap-4"
         >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M10.07 5.92999L4 12L10.07 18.07"
-              stroke="#232323"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M20.9999 12H4.16992"
-              stroke="#232323"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <!-- arrow_left svg -->
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <img
+            on:click={(event) => {
+              show_modal = false;
+            }}
+            src={arrow_left}
+            alt="arrow_left"
+            class="w-6 cursor-pointer"
+          />
           <p
             class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#232323]"
           >
             Change Payment
           </p>
         </div>
-        <svg
-          width="25"
-          height="24"
-          viewBox="0 0 25 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
-          preserveAspectRatio="none"
+
+        <!-- close svg -->
+        <button
+          on:click={(event) => {
+            show_modal = false;
+          }}
+          class="flex justify-start items-center bg-transparent border-0 p-0"
         >
-          <path
-            d="M5.5 5L19.4991 18.9991"
-            stroke="#232323"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M5.50094 18.9991L19.5 5"
-            stroke="#232323"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+          <img src={close_svg} alt="close" class="w-fit relative" />
+        </button>
       </div>
-      <div
-        class="flex justify-start items-center flex-grow-0 flex-shrink-0 w-[757px] gap-4"
-      >
+      <div class="flex justify-start items-center w-[757px] gap-4">
         <div
-          class="flex justify-start items-center flex-grow gap-4 p-4 bg-white border border-[#1f206c]"
+          class="flex justify-start items-center flex-grow gap-4 p-4 bg-white {payment_method ===
+          'paypal'
+            ? 'border'
+            : ''} border-[#1f206c]"
         >
           <div class="flex justify-start items-center flex-grow relative gap-4">
             <svg
@@ -1036,23 +750,20 @@
               Paypal
             </p>
           </div>
-          <div
-            class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-2.5 p-1 rounded-[100px] border-2 border-[#1f206c]"
-          >
-            <svg
-              width="12"
-              height="13"
-              viewBox="0 0 12 13"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="flex-grow-0 flex-shrink-0"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <circle cx="6" cy="6.5" r="6" fill="#1F206C" />
-            </svg>
-          </div>
+          <Radio
+            name="payment"
+            value="paypal"
+            on:change={(e) => {
+              payment_method = "paypal";
+            }}
+          />
         </div>
-        <div class="flex justify-start items-center flex-grow gap-4 p-4">
+        <div
+          class="flex justify-start items-center flex-grow gap-4 p-4 bg-white {payment_method ===
+          'stripe'
+            ? 'border'
+            : ''} border-[#1f206c]"
+        >
           <div class="flex justify-start items-center flex-grow relative gap-4">
             <svg
               width="48"
@@ -1077,27 +788,13 @@
               Stripe
             </p>
           </div>
-          <div
-            class="flex justify-start items-start flex-grow-0 flex-shrink-0 relative gap-2.5 rounded-[100px]"
-          >
-            <svg
-              width="21"
-              height="21"
-              viewBox="0 0 21 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="flex-grow-0 flex-shrink-0"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <circle
-                cx="10.5"
-                cy="10.5"
-                r="8.5"
-                stroke="#D9D9D9"
-                stroke-width="3"
-              />
-            </svg>
-          </div>
+          <Radio
+            name="payment"
+            value="stripe"
+            on:change={(e) => {
+              payment_method = "stripe";
+            }}
+          />
         </div>
       </div>
       <svg
@@ -1106,51 +803,47 @@
         viewBox="0 0 758 1"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="self-stretch flex-grow-0 flex-shrink-0"
+        class="self-stretch"
         preserveAspectRatio="none"
       >
         <path d="M0.5 0.5H757.5" stroke="#D9D9D9" />
       </svg>
       <div
-        class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2"
+        class="flex flex-col justify-start items-start self-stretch relative gap-2"
       >
         <p
           class="flex-grow-0 flex-shrink-0 w-[327px] text-sm font-semibold text-left text-[#232323]"
         >
           Email
         </p>
-        <div
-          class="flex flex-col justify-center items-center self-stretch flex-grow-0 flex-shrink-0 relative p-4 bg-white border border-[#1f206c]"
-        >
-          <p
-            class="self-stretch flex-grow-0 flex-shrink-0 w-[725px] text-lg font-medium text-left text-[#1f206c]"
-          >
-            ganteng@mail.com
-          </p>
-        </div>
+        <Input width="w-full" placeholder="ganteng@mail.com" />
       </div>
-      <div
-        class="flex justify-end items-start self-stretch flex-grow-0 flex-shrink-0 gap-3"
-      >
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-36 relative gap-2 p-4 border border-[#1f206c]"
+      <div class="flex justify-end items-start self-stretch gap-3">
+        <button
+          class="flex justify-center items-center w-36 relative gap-2 p-4 border border-[#1f206c]"
         >
-          <p
+          <span
             class="flex-grow-0 flex-shrink-0 text-base font-medium text-center text-[#232323]"
           >
             Discard
-          </p>
-        </div>
-        <div
-          class="flex justify-center items-center flex-grow-0 flex-shrink-0 w-36 relative gap-2 p-4 bg-[#1f206c]"
+          </span>
+        </button>
+        <button
+          class="flex justify-center items-center w-36 relative gap-2 p-4 bg-[#1f206c]"
         >
-          <p
+          <span
             class="flex-grow-0 flex-shrink-0 text-base font-medium text-center text-white"
           >
             Save
-          </p>
-        </div>
+          </span>
+        </button>
       </div>
     </div>
   </Modal>
 {/if}
+
+<style>
+  p {
+    font-family: "Inter", sans-serif;
+  }
+</style>

@@ -1,11 +1,15 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
   import logout_svg from "../assets/icons/profile/logout.svg";
   import Actions from "../lib/components/navigation/actions.svelte";
+  import MainNavigation from "../lib/components/navigation/main-navigation.svelte";
   import PageHeader from "../lib/components/navigation/page-header.svelte";
+  import ProfileNavigation from "../lib/components/profile/profile-navigation.svelte";
   import ProfileFaqs from "../lib/components/profile/sections/profile-faqs.svelte";
   import ProfileGeneral from "../lib/components/profile/sections/profile-general.svelte";
   import ProfilePayment from "../lib/components/profile/sections/profile-payment.svelte";
   import ProfileTeam from "../lib/components/profile/sections/profile-team.svelte";
+  import PageWrapper from "../lib/components/page-wrapper.svelte";
   let subscriptions: Array<{
     title: string;
     pricing: {
@@ -86,73 +90,77 @@
       ],
     },
   ];
+  const dispatch = createEventDispatcher();
 
-  let current_action: "generate" | "team" | "faqs" | "" = "";
+  let current_action: "general" | "team" | "faqs" | "" = "";
 </script>
 
-<div id="generate-section" class="flex flex-col gap-6">
-  <PageHeader title="Profile">
-    <Actions
-      on:action={(event) => {
-        current_action = event.detail;
-        console.log(event.detail);
-      }}
-      on:sub_action={(event) => {
-        console.log(event.detail);
-      }}
-      actions={[
-        // Generate, Team, FAQs
-        {
-          name: "Generate",
-          active: true,
-          actions: [
+<PageWrapper>
+  <MainNavigation />
+  <div id="generate-section" class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6 mt-4">
+      <PageHeader title="Profile">
+        <Actions
+          on:action={(event) => {
+            current_action = event.detail;
+          }}
+          on:sub_action={(event) => {
+            //
+          }}
+          actions={[
+            // Generate, Team, FAQs
             {
-              name: "Logout",
-              icon: logout_svg,
-              id: "logout",
-              text: "danger",
+              name: "General",
+              active: true,
+              actions: [
+                {
+                  name: "Logout",
+                  icon: logout_svg,
+                  id: "logout",
+                  text: "danger",
+                },
+              ],
             },
-          ],
-        },
-        {
-          name: "Team",
-          active: false,
-          actions: [
             {
-              name: "Logout",
-              icon: logout_svg,
-              id: "logout",
-              text: "danger",
+              name: "Team",
+              active: false,
+              actions: [
+                {
+                  name: "Logout",
+                  icon: logout_svg,
+                  id: "logout",
+                  text: "danger",
+                },
+              ],
             },
-          ],
-        },
-        {
-          name: "FAQs",
-          active: false,
-          actions: [
             {
-              name: "Logout",
-              icon: logout_svg,
-              id: "logout",
-              text: "danger",
+              name: "FAQs",
+              active: false,
+              actions: [
+                {
+                  name: "Logout",
+                  icon: logout_svg,
+                  id: "logout",
+                  text: "danger",
+                },
+              ],
             },
-          ],
-        },
-      ]}
-    />
-  </PageHeader>
+          ]}
+        />
+      </PageHeader>
+    </div>
+    {#if current_action === ""}
+      <ProfilePayment />
+    {:else if current_action === "general"}
+      <ProfileGeneral {subscriptions} />
+    {:else if current_action === "team"}
+      <ProfileTeam />
+    {:else if current_action === "faqs"}
+      <ProfileFaqs />
+    {:else}
+      <h1>...</h1>
+    {/if}
 
-  {#if current_action === ""}
-    <ProfilePayment />
-  {:else if current_action === "generate"}
-    <ProfileGeneral {subscriptions} />
-  {:else if current_action === "team"}
-    <ProfileTeam />
-  {:else if current_action === "faqs"}
-    <ProfileFaqs />
-  {:else}
-    <h1>...</h1>
-  {/if}
-
-  <!-- profile general -->
-</div>
+    <!-- profile general -->
+  </div>
+</PageWrapper>

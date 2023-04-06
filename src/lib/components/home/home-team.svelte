@@ -1,10 +1,123 @@
 <script>
+  // @ts-nocheck
+
+  import { onMount } from "svelte";
   import image_40 from "../../../assets/40.png";
   import image_41 from "../../../assets/41.png";
   import image_42 from "../../../assets/42.png";
   import image_43 from "../../../assets/43.png";
   import image_44 from "../../../assets/44.png";
   import Overlay from "../overlay.svelte";
+
+  const data = [
+    {
+      name: "Richard Morris",
+      role: "Sr. Full Stack Developer",
+      image: image_40,
+    },
+    {
+      name: "Nat Wollny",
+      role: "Co-Founder and CEO",
+      image: image_41,
+    },
+    {
+      name: "Rodrigo Mello",
+      role: "Machine Learning Scientist",
+      image: image_42,
+    },
+    {
+      name: "Christoph Sträter",
+      role: "Co-Founder and CTO",
+      image: image_43,
+    },
+    {
+      name: "Interested in joining?",
+      role: "Open application",
+      image: image_44,
+    },
+  ];
+  let slide_width = 60;
+
+  function slideItem(container, direction) {
+    // Get the current position of the container
+    const currentPosition = container.scrollLeft;
+
+    // Get the width of the container
+    const containerWidth = container.offsetWidth;
+    // get the scrolled percentage of container
+
+    // Calculate the new position based on the direction
+    const newPosition =
+      direction === "left"
+        ? currentPosition - containerWidth / 3
+        : currentPosition + containerWidth / 3;
+
+    // Animate the slide
+    container.scrollTo({
+      left: newPosition,
+      behavior: "smooth",
+    });
+
+    if (direction === "left") {
+      if (slide_width > 60) slide_width = slide_width - 11;
+    } else {
+      if (slide_width < 100) slide_width = slide_width + 11;
+    }
+
+    // Calculate the percentage of the container that has been scrolled
+    // set width of slide indicator max should be 252px
+    const { scrollWidth, scrollLeft, clientWidth } = container;
+
+    // Calculate the percentage of the scroll position
+    const scrollPercentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+
+    const slide_indicator = document.querySelector(".slide-indicator");
+    slide_indicator.style.width = `${scrollPercentage}%`;
+  }
+
+  onMount(() => {
+    const container = document.querySelector(".slide-container");
+    const leftButton = document.querySelector(".arrow-left");
+    const rightButton = document.querySelector(".arrow-right");
+
+    container.onscroll = function () {
+      const { scrollWidth, scrollLeft, clientWidth } = container;
+      const scrollPercentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+      const slide_indicator = document.querySelector(".slide-indicator");
+      slide_indicator.style.width = `${scrollPercentage}%`;
+    };
+
+    function scrollLeft(offset) {
+      // Calculate the new scrollLeft value
+      const scrollable = container;
+      const newScrollLeft = scrollable.scrollLeft + offset;
+
+      // Scroll to the new position with smooth behavior
+      scrollable.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+
+      // Calculate the percentage of the scroll position
+      const { scrollWidth, clientWidth } = scrollable;
+      const scrollPercentage =
+        (newScrollLeft / (scrollWidth - clientWidth)) * 100;
+
+      // Set the width of the indicator to the scroll percentage
+      const slide_indicator = document.querySelector(".slide-indicator");
+
+      slide_indicator.style.width = `${scrollPercentage}%`;
+    }
+
+    leftButton.addEventListener("click", () => {
+      // slideItem(container, "left");
+      scrollLeft(-440);
+    });
+
+    rightButton.addEventListener("click", () => {
+      scrollLeft(440);
+    });
+  });
 </script>
 
 <div
@@ -13,32 +126,33 @@
 >
   <div class="flex justify-start items-start self-stretch relative gap-[473px]">
     <div class="flex flex-col justify-start items-start relative gap-6">
-      <p
+      <span
         class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-[#1f206c]"
       >
         TEAM
-      </p>
+      </span>
       <p
         class="flex-grow-0 flex-shrink-0 text-[58px] text-left uppercase text-neutral-900"
       >
         the team
       </p>
     </div>
-    <p
+    <span
       class="flex-grow-0 flex-shrink-0 w-[610px] text-lg text-left text-[#757575]"
     >
       We are gamers, physicists, biologists, fashionistas and generative
       enthusiasts. United to bring cutting edge creative technologies to content
       creators.
-    </p>
+    </span>
   </div>
+
   <div
-    class="flex justify-start items-start self-stretch relative overflow-y-hidden overflow-x-scroll gap-[42px]"
+    class="flex justify-start items-start self-stretch relative overflow-y-hidden hide-scrollbar py-4 px-2 gap-[42px] slide-container"
   >
-    {#each [image_40, image_41, image_42, image_43, image_44] as item}
-      <div class="group relative  min-w-[396px] overflow-hidden">
+    {#each data as { name, role, image }}
+      <div class="group relative min-w-[396px] overflow-hidden">
         <img
-          src={item}
+          src={image}
           alt="..."
           class="object-cover h-[600px] group-hover:blur-3xl"
         />
@@ -47,27 +161,27 @@
             class="flex flex-col justify-between items-center h-full w-full p-10"
           >
             <div class="flex flex-col justify-start items-start relative">
-              <p
+              <span
                 class="flex-grow-0 flex-shrink-0 text-[32px] font-semibold text-left text-white"
               >
-                Richard Morris
-              </p>
-              <p
+                {name}
+              </span>
+              <span
                 class="flex-grow-0 flex-shrink-0 w-[312px] text-lg text-left text-white"
               >
-                Sr. Full Stack Developer
-              </p>
+                {role}
+              </span>
             </div>
             <div class="flex flex-col justify-start items-start gap-2">
               {#each ["Medium", "Twitter", "LinkedIn"] as media}
                 <div
                   class="flex justify-center items-center w-[312px] relative gap-3 px-8 py-4 bg-white"
                 >
-                  <p
+                  <span
                     class="flex-grow-0 flex-shrink-0 text-lg font-medium text-left text-[#1f206c]"
                   >
                     {media}
-                  </p>
+                  </span>
                   <svg
                     width="22"
                     height="15"
@@ -95,9 +209,13 @@
     {/each}
   </div>
   <div class="flex justify-start items-center relative gap-5 pr-[68px]">
-    <div class="flex justify-start items-start relative">
-      <div class="flex-grow-0 flex-shrink-0 w-[140px] h-[3px] bg-[#4434c9]" />
-      <div class="flex-grow-0 flex-shrink-0 w-[252px] h-[3px] bg-[#f4f4f4]" />
+    <div
+      class="flex justify-start items-start relative w-[252px] overflow-x-hidden"
+    >
+      <div
+        class="flex-grow-0 flex-shrink-0 slide-indicator h-[3px] bg-[#4434c9]"
+      />
+      <div class="flex-grow-0 flex-shrink-0 h-[3px] w-[252px] bg-[#f4f4f4]" />
     </div>
     <svg
       width="24"
@@ -105,7 +223,7 @@
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative arrow-left"
       preserveAspectRatio="none"
     >
       <path
@@ -131,7 +249,7 @@
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative arrow-right"
       preserveAspectRatio="none"
     >
       <path
@@ -153,3 +271,9 @@
     </svg>
   </div>
 </div>
+
+<style>
+  .slide-container::-webkit-scrollbar {
+    display: none;
+  }
+</style>

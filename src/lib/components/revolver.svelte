@@ -1,9 +1,9 @@
 <script lang="ts">
-//
+  //
 </script>
 
 <div
-  class="flex flex-col justify-center items-start  overflow-hidden gap-3 py-3 bg-[#fffefe]"
+  class="max-w-full  flex flex-col justify-center items-start  overflow-hidden gap-3 py-3 bg-[#fffefe]"
 >
   <svg
     height="4"
@@ -21,7 +21,7 @@
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -49,16 +49,14 @@
         stroke-linecap="square"
       />
     </svg>
-    <p class="flex-grow-0 flex-shrink-0 text-[40px] text-left text-black">
-      MODELME
-    </p>
+    <p class=" text-[40px] text-left text-black">MODELME</p>
     <svg
       width="24"
       height="25"
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -86,18 +84,14 @@
         stroke-linecap="square"
       />
     </svg>
-    <p
-      class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-black"
-    >
-      #1 Upload
-    </p>
+    <span class=" text-lg font-semibold text-left min-w-fit text-black"> #1 Upload </span>
     <svg
       width="24"
       height="25"
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -125,18 +119,14 @@
         stroke-linecap="square"
       />
     </svg>
-    <p
-      class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-black"
-    >
-      #2 Select
-    </p>
+    <span class="min-w-max text-lg font-semibold text-left text-black">#2 Select</span>
     <svg
       width="24"
       height="25"
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -164,18 +154,14 @@
         stroke-linecap="square"
       />
     </svg>
-    <p
-      class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-black"
-    >
-      #3 Generate
-    </p>
+    <span class="min-w-max text-lg font-semibold text-left text-black">#3 Generate</span>
     <svg
       width="24"
       height="25"
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -203,16 +189,14 @@
         stroke-linecap="square"
       />
     </svg>
-    <p class="flex-grow-0 flex-shrink-0 text-[40px] text-left text-black">
-      MODELME
-    </p>
+    <p class=" text-[40px] text-left text-black">MODELME</p>
     <svg
       width="24"
       height="25"
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -240,18 +224,14 @@
         stroke-linecap="square"
       />
     </svg>
-    <p
-      class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-black"
-    >
-      #1 Upload
-    </p>
+    <span class="min-w-max text-lg font-semibold text-left text-black">#1 Upload</span>
     <svg
       width="24"
       height="25"
       viewBox="0 0 24 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      class="flex-grow-0 flex-shrink-0 w-6 h-6 relative"
+      class=" w-6 h-6 relative"
       preserveAspectRatio="none"
     >
       <path
@@ -279,11 +259,7 @@
         stroke-linecap="square"
       />
     </svg>
-    <p
-      class="flex-grow-0 flex-shrink-0 text-lg font-semibold text-left text-black"
-    >
-      #2 Select
-    </p>
+    <span class="min-w-max text-lg font-semibold text-left text-black">#2 Select</span>
   </div>
   <svg
     height="4"
